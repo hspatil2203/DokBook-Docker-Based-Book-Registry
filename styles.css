@@ -1,0 +1,251 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5d7ea;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Main container */
+.container {
+  position: relative; /* To position child elements like the image */
+  width: 90%; /* Increased the width */
+  max-width: 1200px; /* Ensures the container doesn't get too wide on large screens */
+  margin: 0 auto;
+  padding: 40px; /* Adjusted padding for better proportions */
+  background: linear-gradient(135deg, #f7a7c0, #6a7cdd);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1; /* Ensures the content stays above the image */
+}
+
+.container-bg-image {
+  position: fixed; /* Fixes the image to the viewport */
+  bottom: 0; /* Aligns it to the bottom of the page */
+  right: 0; /* Aligns it to the right edge */
+  width: 100%; /* Makes it span the full width */
+  height: 100%; /* Ensures it covers the full height */
+  object-fit: cover; /* Ensures the aspect ratio is maintained while covering the space */
+  z-index: -1; /* Places it behind the rest of the content */
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  font-size: 1.1rem;
+  margin: 0 15px;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Search bar and sorting buttons */
+.search-sort {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 45%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.7);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #ff5733;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sort-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.sort-buttons button {
+  background-color: #ff5733;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sort-buttons button:hover {
+  background-color: #e04e2c;
+  transform: scale(1.05);
+}
+
+/* Book list */
+.book-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.book-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.book-list li:hover {
+  background-color: #fffcf7;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-list li strong {
+  font-size: 1.2rem;
+  color: #333;
+  flex: 1;
+}
+
+.book-list li span {
+  font-size: 1rem;
+  color: #888;
+}
+
+.book-list li button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-list li button:hover {
+  background-color: #e04e2c;
+  transform: scale(1.1);
+}
+
+/* Form styling */
+form {
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-size: 1rem;
+  color: #333;
+}
+
+form input, form select {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+  border-color: #ff5733;
+  outline: none;
+}
+
+form button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: #e04e2c;
+  transform: scale(1.05);
+}
+
+/* Animation for page load */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.container {
+  animation: fadeIn 1s ease-out;
+}
+
+/* Updated Search Results Styling */
+.search-results {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%; /* Ensures it spans the full width of the container */
+  box-sizing: border-box; /* Includes padding in the width */
+}
+
+.search-result-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item strong {
+  font-weight: bold;
+}

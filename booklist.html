@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Book List</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="add-book.html" class="nav-link">Add Book</a>
+        
+      </nav>
+    </header>
+
+    <div class="sort-buttons">
+      <button onclick="sortBooks('name')">Sort by Name</button>
+      <button onclick="sortBooks('quantity')">Sort by Quantity</button>
+
+    </div>
+
+    <h2>Books</h2>
+    <ul id="bookList" class="book-list">
+      <!-- Books will be dynamically inserted here -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Load books on page load
+    document.addEventListener('DOMContentLoaded', displayBooks);
+  </script>
+</body>
+
+</html>

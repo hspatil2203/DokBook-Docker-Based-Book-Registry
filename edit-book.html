@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Book</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Edit Book Details</h1>
+      <nav>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="add-book.html" class="nav-link">Add Book</a>
+      </nav>
+    </header>
+
+    <form id="editBookForm">
+      <input type="hidden" id="bookId">
+
+      <label for="bookName">Book Name:</label>
+      <input type="text" id="bookName" required>
+
+      <label for="authorName">Author Name:</label>
+      <input type="text" id="authorName" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" required>
+
+      <label for="status">Availability:</label>
+      <select id="status">
+        <option value="available">Available</option>
+        <option value="unavailable">Unavailable</option>
+      </select>
+
+      <button type="submit">Update Book</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Wait until the document is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Get the bookId from the URL query string
+      const urlParams = new URLSearchParams(window.location.search);
+      const bookId = urlParams.get('bookId');
+
+      // Load books from localStorage
+      loadBooksFromLocalStorage();
+
+      // Find the book with the matching bookId
+      const book = books.find(book => book.bookId === bookId);
+      
+      // Populate the form with the book details if found
+      if (book) {
+        document.getElementById('bookId').value = book.bookId;
+        document.getElementById('bookName').value = book.bookName;
+        document.getElementById('authorName').value = book.authorName;
+        document.getElementById('quantity').value = book.quantity;
+        document.getElementById('status').value = book.status;
+      }
+    });
+  </script>
+</body>
+</html>
